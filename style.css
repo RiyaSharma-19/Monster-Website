@@ -1,3 +1,8 @@
+/* ============================================
+   MONSTER DRINKS — style.css
+   ============================================ */
+
+/* ── CSS VARIABLES ── */
 :root {
   --green:   #a8ff00;
   --dark:    #0a0a0a;
@@ -23,6 +28,17 @@ body {
   font-size: 18px;
   overflow-x: hidden;
 }
+
+.product-name {
+  position: relative;
+  top: 110px;
+}
+
+.product-desc {
+  position: relative;
+  top: 90px;
+}
+
 
 /* ============================================
    NAV
@@ -255,8 +271,8 @@ section { padding: 100px 6vw; }
 }
 
 .product-card {
-  background: var(--card-bg);
-  padding: 48px 32px 36px;
+  /*background: var(--card-bg);
+  /*padding: 48px 32px 36px;*/
   position: relative;
   overflow: hidden;
   transition: transform 0.3s;
@@ -286,21 +302,22 @@ section { padding: 100px 6vw; }
 
 .product-img-wrap {
   width: 100%;
-  height: 200px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
-  background: #161616;
+  margin-bottom: 2px;
+  /*background: #161616;*/
   border-radius: 4px;
   overflow: hidden;
 }
 
 /* placeholder can art */
 .can-art {
-  width: 72px;
-  height: 130px;
-  border-radius: 14px;
+  padding-top: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -309,19 +326,57 @@ section { padding: 100px 6vw; }
   letter-spacing: 2px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  transform: rotate(180deg);
+  /*transform: rotate(180deg);*/
 }
 
-.can-green  { background: linear-gradient(160deg, #1a2a00, #3a5c00); color: var(--green); }
-.can-blue   { background: linear-gradient(160deg, #001a2a, #003a5c); color: #00cfff; }
-.can-red    { background: linear-gradient(160deg, #2a0000, #5c0000); color: #ff4444; }
-.can-purple { background: linear-gradient(160deg, #1a002a, #3a005c); color: #cc44ff; }
+.about-bg-box {
+  background-image: url("green-can.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*.can-green  { background: linear-gradient(160deg, #1a2a00, #3a5c00); color: var(--green); }*/
+.can-green {
+  background-image: url("red-can.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*.can-blue   { background: linear-gradient(160deg, #001a2a, #003a5c); color: #00cfff; }*/
+.can-blue {
+  background-image: url("blue-can.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*.can-red    { background: linear-gradient(160deg, #2a0000, #5c0000); color: #ff4444; }
+.can-purple { background: linear-gradient(160deg, #1a002a, #3a005c); color: #cc44ff; }*/
+
+.can-red {
+  background-image: url("orange-can.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.can-purple {
+  background-image: url("purple-can.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .product-name {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.9rem;
   letter-spacing: 2px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  margin-top: -100px;
 }
 
 .product-desc {
@@ -330,6 +385,7 @@ section { padding: 100px 6vw; }
   font-weight: 300;
   line-height: 1.55;
   margin-bottom: 28px;
+  margin-top: 10px;
 }
 
 .product-price {
@@ -338,6 +394,7 @@ section { padding: 100px 6vw; }
   color: var(--green);
   letter-spacing: 1px;
   margin-bottom: 20px;
+  padding-top: 70px;
 }
 
 /* ============================================
@@ -385,21 +442,24 @@ section { padding: 100px 6vw; }
 .about-bg-box {
   width: 100%;
   padding-top: 100%;
-  background: #111;
+ /* background: #111;*/
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-bg-box::after {
-  content: 'M';
+  /*content: 'M';*/
   position: absolute;
   inset: 0;
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 45vw;
-  color: rgba(168, 255, 0, 0.04);
+  /*color: rgba(168, 255, 0, 0.04);*/
   line-height: 1;
 }
 
@@ -407,7 +467,7 @@ section { padding: 100px 6vw; }
   position: absolute;
   bottom: -20px; right: -20px;
   width: 160px; height: 160px;
-  background: var(--green);
+  /*background: var(--green);*/
 }
 
 .about-text p {
@@ -580,4 +640,49 @@ footer {
 
   footer { flex-direction: column; align-items: flex-start; }
 }
->>>>>>> 200e529121b993c015792d2d321e4041aed39169
+
+.about-bg-box {
+  width: 100%;
+  padding-top: 100%;
+  background: #111;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ADD THIS */
+.about-bg-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills box perfectly */
+  z-index: 1;
+}
+
+.product-tag {
+  margin-top: 5px;
+}
+
+.about-bg-box {
+  background-image: url("puz-back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 0px;
+  padding-top: 350px;
+  /*display:flex;
+  justify-content: center;
+  justify-items: center;
+  padding-bottom: 100px;*/
+}
+
+  .puzzle {
+     display:flex;
+  justify-content: center;
+  justify-items: center;
+  padding-bottom: 100px;
+  position: relative;
+  margin-bottom: 80px;
+
+  }
