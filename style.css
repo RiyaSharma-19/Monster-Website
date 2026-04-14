@@ -676,7 +676,7 @@ footer {
 .footer-links a:hover { color: var(--green); }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE — 768px (Tablet)
    ============================================ */
 @media (max-width: 768px) {
   nav { padding: 16px 5vw; }
@@ -723,14 +723,29 @@ footer {
   }
 }
 
+/* ============================================
+   RESPONSIVE — 480px (Mobile)
+   ============================================ */
 @media (max-width: 480px) {
   .nav-logo { font-size: 1.4rem; }
   nav { padding: 14px 4vw; }
 
+  /* ✅ FIX: Stop hero title from overflowing screen */
+  .hero-title {
+    font-size: clamp(3rem, 18vw, 5rem);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
   .hero-sub { font-size: 1rem; }
 
-  .hero-btns { flex-direction: column; align-items: center; }
-  .hero-btns .btn { width: 100%; text-align: center; }
+  /* ✅ FIX: Buttons full width and clip-path removed on mobile */
+  .hero-btns { flex-direction: column; align-items: stretch; padding: 0 6vw; }
+  .hero-btns .btn {
+    width: 100%;
+    text-align: center;
+    clip-path: none;
+  }
 
   .product-grid { grid-template-columns: 1fr; }
 
