@@ -325,6 +325,8 @@ section { padding: 100px 6vw; }
 }
 
 .product-card {
+  /*background: var(--card-bg);
+  /*padding: 48px 32px 36px;*/
   position: relative;
   overflow: hidden;
   transition: transform 0.3s;
@@ -350,7 +352,6 @@ section { padding: 100px 6vw; }
   text-transform: uppercase;
   color: var(--green);
   margin-bottom: 12px;
-  margin-top: 5px;
 }
 
 .product-img-wrap {
@@ -360,12 +361,14 @@ section { padding: 100px 6vw; }
   align-items: center;
   justify-content: center;
   margin-bottom: 2px;
+  /*background: #161616;*/
   border-radius: 4px;
   overflow: hidden;
 }
 
 /* placeholder can art */
 .can-art {
+  padding-top: 0px;
   width: 100%;
   height: 100%;
   border-radius: 2px;
@@ -377,6 +380,7 @@ section { padding: 100px 6vw; }
   letter-spacing: 2px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  /*transform: rotate(180deg);*/
 }
 
 .about-bg-box {
@@ -386,6 +390,7 @@ section { padding: 100px 6vw; }
   background-repeat: no-repeat;
 }
 
+/*.can-green  { background: linear-gradient(160deg, #1a2a00, #3a5c00); color: var(--green); }*/
 .can-green {
   background-image: url("red-can.png");
   background-size: cover;
@@ -393,12 +398,16 @@ section { padding: 100px 6vw; }
   background-repeat: no-repeat;
 }
 
+/*.can-blue   { background: linear-gradient(160deg, #001a2a, #003a5c); color: #00cfff; }*/
 .can-blue {
   background-image: url("blue-can.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/*.can-red    { background: linear-gradient(160deg, #2a0000, #5c0000); color: #ff4444; }
+.can-purple { background: linear-gradient(160deg, #1a002a, #3a005c); color: #cc44ff; }*/
 
 .can-red {
   background-image: url("orange-can.png");
@@ -487,6 +496,7 @@ section { padding: 100px 6vw; }
 .about-bg-box {
   width: 100%;
   padding-top: 100%;
+ /* background: #111;*/
   position: relative;
   overflow: hidden;
   background-size: cover;
@@ -495,13 +505,15 @@ section { padding: 100px 6vw; }
 }
 
 .about-bg-box::after {
+  /*content: 'M';*/
   position: absolute;
   inset: 0;
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 45vw;
+  /*color: rgba(168, 255, 0, 0.04);*/
   line-height: 1;
 }
 
@@ -509,6 +521,7 @@ section { padding: 100px 6vw; }
   position: absolute;
   bottom: -20px; right: -20px;
   width: 160px; height: 160px;
+  /*background: var(--green);*/
 }
 
 .about-text p {
@@ -663,21 +676,120 @@ footer {
 .footer-links a:hover { color: var(--green); }
 
 /* ============================================
-   ABOUT BG BOX (image override)
+   RESPONSIVE
    ============================================ */
+@media (max-width: 768px) {
+  nav { padding: 16px 5vw; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  #about,
+  .contact-inner { grid-template-columns: 1fr; gap: 50px; }
+
+  .about-visual { display: none; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .products-header { flex-direction: column; align-items: flex-start; }
+
+  footer { flex-direction: column; align-items: flex-start; }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  /* ✅ FIX: Reset card text offsets for tablet */
+  .product-name {
+    margin-top: 0;
+    top: 0;
+  }
+
+  .product-desc {
+    top: 0;
+  }
+
+  .product-price {
+    padding-top: 10px;
+  }
+
+  .product-card {
+    padding: 12px;
+  }
+
+  .product-img-wrap {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo { font-size: 1.4rem; }
+  nav { padding: 14px 4vw; }
+
+  .hero-sub { font-size: 1rem; }
+
+  .hero-btns { flex-direction: column; align-items: center; }
+  .hero-btns .btn { width: 100%; text-align: center; }
+
+  .product-grid { grid-template-columns: 1fr; }
+
+  .stat-number { font-size: 2.5rem; }
+
+  .footer-links { gap: 16px; font-size: 0.75rem; flex-wrap: wrap; }
+
+  section { padding: 70px 5vw; }
+
+  /* ✅ FIX: Reset card text offsets for mobile */
+  .product-name {
+    margin-top: 0;
+    top: 0;
+  }
+
+  .product-desc {
+    top: 0;
+  }
+
+  .product-price {
+    padding-top: 10px;
+  }
+
+  .product-card {
+    padding: 12px;
+  }
+
+  .product-img-wrap {
+    height: 300px;
+  }
+}
+
+.about-bg-box {
+  width: 100%;
+  padding-top: 100%;
+  background: #111;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ADD THIS */
+.about-bg-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.product-tag {
+  margin-top: 5px;
+}
+
 .about-bg-box {
   background-image: url("puz-back.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 0;
+  padding: 0px 0px 0px 0px;
   padding-top: 350px;
-}
-
-.about-bg-box img {
-  position: absolute;
-  top: 0; left: 0;
-  z-index: 1;
 }
 
 .puzzle {
@@ -687,82 +799,4 @@ footer {
   padding-bottom: 100px;
   position: relative;
   margin-bottom: 80px;
-}
-
-/* ============================================
-   RESPONSIVE — 768px (Tablet)
-   ============================================ */
-@media (max-width: 768px) {
-
-  /*  RESPONSIVE: Nav — show hamburger, hide desktop links */
-  nav { padding: 16px 5vw; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-
-  /*  RESPONSIVE: Hero — tighten padding for mobile */
-  #home { padding: 100px 6vw 60px; }
-
-  /*  RESPONSIVE: Products header stacks vertically */
-  .products-header { flex-direction: column; align-items: flex-start; }
-
-  /*  RESPONSIVE: Stats bar becomes 2x2 grid */
-  .stats-bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-  }
-
-  /*  RESPONSIVE: About section stacks, visual hidden */
-  #about {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  .about-visual { display: none; }
-
-  /*  RESPONSIVE: Contact stacks to single column */
-  .contact-inner {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  /*  RESPONSIVE: Form row stacks to single column */
-  .form-row { grid-template-columns: 1fr; }
-
-  /*  RESPONSIVE: Footer stacks to column */
-  footer { flex-direction: column; align-items: flex-start; }
-}
-
-/* ============================================
-   RESPONSIVE — 480px (Mobile)
-   ============================================ */
-@media (max-width: 480px) {
-
-  /*  RESPONSIVE: Nav logo shrinks */
-  .nav-logo { font-size: 1.4rem; }
-  nav { padding: 14px 4vw; }
-
-  /*  RESPONSIVE: Hero subtitle font shrinks */
-  .hero-sub { font-size: 1rem; }
-
-  /*  RESPONSIVE: Hero buttons stack vertically and go full width */
-  .hero-btns { flex-direction: column; align-items: center; }
-  .hero-btns .btn { width: 100%; text-align: center; }
-
-  /*  RESPONSIVE: Product grid single column */
-  .product-grid { grid-template-columns: 1fr; }
-
-  /*  RESPONSIVE: Product image height reduced on mobile */
-  .product-img-wrap { height: 300px; }
-
-  /*  RESPONSIVE: Remove large padding-top gap on price */
-  .product-price { padding-top: 20px; }
-
-  /*  RESPONSIVE: Stat numbers shrink */
-  .stat-number { font-size: 2.5rem; }
-
-  /*  RESPONSIVE: Footer links shrink */
-  .footer-links { gap: 16px; font-size: 0.75rem; flex-wrap: wrap; }
-
-  /*  RESPONSIVE: Section padding tightened */
-  section { padding: 70px 5vw; }
 }
