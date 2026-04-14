@@ -7,21 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-      <!-- NAV -->
-        <nav>
-          <a href="#home" class="nav-logo">Monster Drink</a>
-          <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
 
-        <!-- HERO -->
-        <section id="home">
-          <div class="hero-content">
-             <p class="hero-eyebrow"> Premium Energy</p>
+  <!-- NAV -->
+  <nav>
+    <a href="#home" class="nav-logo">Monster Drink</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!--  RESPONSIVE: Hamburger button — only visible on mobile -->
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!--  RESPONSIVE: Mobile dropdown menu — hidden by default, toggled by hamburger -->
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="#home"     onclick="closeMobileMenu()">Home</a>
+    <a href="#products" onclick="closeMobileMenu()">Products</a>
+    <a href="#about"    onclick="closeMobileMenu()">About Us</a>
+    <a href="#contact"  onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Premium Energy</p>
       <h1 class="hero-title">UN<span>LEASH</span><br>THE BEAST</h1>
       <p class="hero-sub">
         Experience the ultimate energy boost — engineered for those who refuse to stop.
@@ -112,16 +128,15 @@
       <div class="stat-label">Years of energy</div>
     </div>
   </div>
-  
+
   <!-- ABOUT -->
   <section id="about">
     <div class="about-visual">
       <div class="about-bg-box">
         <div class="puzzle">
-        <iframe src="https://ruwix.com/online-puzzle-simulators/sliding-15-puzzle?scale=1&rept=1&scram=1&nums=1&pic=https%3A%2F%2Fi1.sndcdn.com%2Favatars-000009354847-p9a6gy-t1080x1080.jpg" scrolling="no" style="overflow: hidden;" width="300" height="300"></iframe>
+          <iframe src="https://ruwix.com/online-puzzle-simulators/sliding-15-puzzle?scale=1&rept=1&scram=1&nums=1&pic=https%3A%2F%2Fi1.sndcdn.com%2Favatars-000009354847-p9a6gy-t1080x1080.jpg" scrolling="no" style="overflow: hidden;" width="300" height="300"></iframe>
         </div>
-  <!-- <img src="green-can.png" alt="Monster Energy Can"> -->
-</div>
+      </div>
       <div class="about-accent"></div>
     </div>
     <div class="about-text">
@@ -210,5 +225,27 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!--  RESPONSIVE: Hamburger toggle script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+    }
+
+    //  RESPONSIVE: Close menu if user clicks outside of it
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+  </script>
+
 </body>
 </html>
